@@ -79,3 +79,32 @@ const newArray = adminPaths2.reduce((acc, item) => {
 // console.log(newArray);
 
 // newArray[1].children.map(i => console.log(i.name))
+
+
+
+
+const facultyPath = [
+    {
+        name: "Dashboard",
+        path: "dashboard",
+        element: "<FacultyDashboard></FacultyDashboard>",
+    },
+    {
+        name: "Offerd Course",
+        path: "offerd-course",
+        element: "<OfferdCourse></OfferdCourse>",
+    },
+];
+
+
+const facultySideBarItems = facultyPath.reduce((acc, item) => {
+    if (item.name && item.path) {
+        acc.push({
+            key: item.name,
+            label: item.path
+        })
+    }
+    return acc
+}, [])
+
+console.log(facultySideBarItems);
